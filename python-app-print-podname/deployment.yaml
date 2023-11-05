@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-name-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pod-name-app
+  template:
+    metadata:
+      labels:
+        app: pod-name-app
+    spec:
+      containers:
+      - name: pod-name-app
+        image: ckr123/python-app-podname
+        ports:
+        - containerPort: 8080
